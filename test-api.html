@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Probando API de divisas</title>
+    </head>
+    <body>
+        Abre la consola
+        <script>
+        //console.log("Listado");
+        fetch("https://reqres.in/api/users?page=1")
+        .then(respuesta => respuesta.json())
+        .then(respuestaDecodificada => {
+            console.log(respuestaDecodificada);
+        });
+
+        
+        </script>
+
+        <script type="text/javascript">
+            //console.log("Creando...");
+        fetch("https://reqres.in/api/users", 
+        {
+            method: 'POST',
+            "header": [],
+            "body": {
+                "mode": "raw",
+                "raw": "{\r\n    \"name\": \"morpheus\",\r\n    \"job\": \"leader\"\r\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+            }
+        })
+        .then(respuesta => respuesta.json())
+        .then(respuestaDecodificada => {
+            console.log(respuestaDecodificada);
+        });
+
+        </script>
+    </body>
+</html>
